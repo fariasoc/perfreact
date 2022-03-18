@@ -39,7 +39,10 @@ export default function Home() {
         <button type="submit"> Buscar </button>
       </form>
 
-      <SearchResults results={results} />
+      <SearchResults 
+        results={results} 
+        
+      />
 
     </div>
   )
