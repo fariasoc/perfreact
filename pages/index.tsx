@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { FormEvent, useState } from 'react'
+import React, { FormEvent, useCallback, useState } from 'react'
 import { SearchResults } from '../components/SearchResults'
 import styles from '../styles/Home.module.css'
 
@@ -22,9 +22,9 @@ export default function Home() {
 
   }
 
-  async function addToWishList(id:number) {
-    console.log(id);
-  }
+  const addToWishList = useCallback(async (id:number) => {
+      console.log(id);
+  }, [])
 
   return (
     <div>
@@ -41,7 +41,7 @@ export default function Home() {
 
       <SearchResults 
         results={results} 
-        
+        onAddToWishList={addToWishList}
       />
 
     </div>
