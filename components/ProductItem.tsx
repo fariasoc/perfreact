@@ -16,7 +16,9 @@ interface ProductItemProps {
   )
 }
 
-export const ProductItem = memo(ProductItemComponent)
+export const ProductItem = memo(ProductItemComponent, (prevProps, nextProps) => {
+  return Object.is(prevProps.product, nextProps.product) 
+})
 
 /*
 export const ProductItem = memo(({product}: ProductItemProps) => {
